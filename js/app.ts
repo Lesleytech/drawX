@@ -115,9 +115,9 @@ function changeTool(newTool) {
   tool = newTool;
 
   if (newTool === 'brush') {
-    canvas.style.cursor = "url('../assets/paint-brush.png'), auto";
+    canvas.style.cursor = "url('./assets/paint-brush.png'), auto";
   } else if (newTool === 'eraser') {
-    canvas.style.cursor = "url('../assets/eraser.png'), auto";
+    canvas.style.cursor = "url('./assets/eraser.png'), auto";
   }
 }
 
