@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: #0093E9;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+a {
+    color: #0093E9;
+    text-decoration: none;
+}
+
+.brand {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+
+#menu {
+    background-color: #eee;
+    padding: 20px;
+    position: relative;
+}
+
+canvas {
+    cursor: url('../assets/paint-brush.png'), auto;
+}
+
+#menu>small {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+}
+
+#color-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 24px);
+    grid-auto-rows: 24px;
+    gap: 5px;
+}
+
+#color-selector button {
+    border: none;
+    border-radius: 3px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.section {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.section p {
+    margin-top: 0;
+}
+
+#brush-size-selector {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#selected-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
