@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Draw X</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="app">
-        <canvas id="canvas"></canvas>
-        <div id="menu">
-            <div class="d-flex align-center justify-between">
-                <strong class="brand">Draw X<sup><small>TM</small></sup></strong>
-                <small>V 1.0</small>
-            </div>
-            <div class="section">
-                <p>Actions</p>
-                <button onclick="download()">Download</button>
-                <button onclick="clearCanvas()">Clear</button>
-            </div>
-            <div class="section">
-                <span id="selected-color"></span>
-                <p>Colors</p>
-                <div id="color-selector">
-                    <button value="#000" onclick="changeColor(this)"></button>
-                    <button value="#0093E9" onclick="changeColor(this)"></button>
-                    <button value="#f44" onclick="changeColor(this)"></button>
-                    <button value="#4bff9f" onclick="changeColor(this)"></button>
-                </div>
-            </div>
-            <div class="section">
-                <p>Brush size</p>
-                <div class="align-center d-flex justify-between">
-                    <input type="range" min="1" max="50" onchange="changeBrushSize(this)" id="brush-size-selector">
-                    <small id="brush-size"></small>
-                </div>
-            </div>
-            <small>Coded with ♡ by <a href="https://github.com/lesleytech" target="_blank">Lafen Lesley</a></small>
+      <canvas id="canvas"></canvas>
+      <div id="menu">
+        <div class="d-flex align-center justify-between">
+          <strong class="brand"
+            >Draw X<sup><small>TM</small></sup></strong
+          >
+          <small>V 1.0</small>
         </div>
+        <div class="section">
+          <p>Actions</p>
+          <button onclick="download()">Download</button>
+          <button onclick="clearCanvas()">Clear</button>
+        </div>
+        <div class="section">
+          <span id="selected-color"></span>
+          <p>Colors</p>
+          <div id="color-selector">
+            <button value="#000" onclick="changeColor(this)"></button>
+            <button value="#0093E9" onclick="changeColor(this)"></button>
+            <button value="#f44" onclick="changeColor(this)"></button>
+            <button value="#4bff9f" onclick="changeColor(this)"></button>
+          </div>
+        </div>
+        <div class="section">
+          <p>Size</p>
+          <div class="align-center d-flex justify-between">
+            <input
+              type="range"
+              min="1"
+              max="50"
+              onchange="changeBrushSize(this)"
+              id="brush-size-selector"
+            />
+            <small id="brush-size"></small>
+          </div>
+        </div>
+        <div class="section">
+          <p>Tools</p>
+          <div id="tool-selector">
+            <button title="Brush" onclick="changeTool('brush')">
+              <img src="./assets/paint-brush.png" alt="brush" />
+            </button>
+            <button title="Eraser" onclick="changeTool('eraser')">
+              <img src="./assets/eraser.png" alt="eraser" />
+            </button>
+          </div>
+        </div>
+        <small
+          >Coded with ♡ by
+          <a href="https://github.com/lesleytech" target="_blank"
+            >Lafen Lesley</a
+          ></small
+        >
+      </div>
     </div>
     <script src="js/app.js"></script>
-</body>
-
+  </body>
 </html>

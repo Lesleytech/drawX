@@ -67,7 +67,27 @@ canvas {
 
 #color-selector button {
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
+}
+
+#tool-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 36px);
+    grid-auto-rows: 36px;
+    gap: 5px;
+}
+
+#tool-selector button {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+#tool-selector img {
+    width: 28px;
+    height: 28px;
 }
 
 .d-flex {

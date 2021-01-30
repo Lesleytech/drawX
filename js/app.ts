@@ -29,6 +29,8 @@ canvas.height = canvasHeight;
 
 // variables
 let painting = false;
+let tool = 'brush';
+let strokeStyle = defaults.color;
 
 //functions
 function startPosition(e) {
@@ -43,6 +45,12 @@ function finishedPosition() {
 
 function draw(e: MouseEvent) {
   if (!painting) return;
+
+  if (tool === 'eraser') {
+    ctx.strokeStyle = '#fff';
+  } else {
+    ctx.strokeStyle = strokeStyle;
+  }
 
   ctx.lineCap = 'round';
   ctx.lineTo(e.clientX, e.clientY);
@@ -76,6 +84,7 @@ function clearCanvas() {
 function changeColor(e: HTMLButtonElement) {
   ctx.strokeStyle = e.value;
   selectedColor.style.backgroundColor = e.value;
+  strokeStyle = e.value;
 }
 
 function changeBrushSize({ value }) {
@@ -100,6 +109,16 @@ function loadDefaults({ color, lineWidth }: defaultsInterface) {
   brushSizeSelector.value = lineWidth.toString();
   brushSize.innerText = lineWidth.toString();
   selectedColor.style.backgroundColor = color;
+}
+
+function changeTool(newTool) {
+  tool = newTool;
+
+  if (newTool === 'brush') {
+    canvas.style.cursor = "url('../assets/paint-brush.png'), auto";
+  } else if (newTool === 'eraser') {
+    canvas.style.cursor = "url('../assets/eraser.png'), auto";
+  }
 }
 
 // Load app defaults
